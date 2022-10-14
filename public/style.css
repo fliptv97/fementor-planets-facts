@@ -1,0 +1,88 @@
+:root {
+  --white: #fff;
+  --black-pearl: #070724;
+  --dark-grey: #38384f;
+  --light-grey: #838391;
+  --mercury: #419ebb;
+  --venus: #eda249;
+  --earth: #6f2ed6;
+  --mars: #d14c32;
+  --jupiter: #d83a34;
+  --saturn: #cd5120;
+  --uranus: #1ec2a4;
+  --neptune: #2d68f0;
+  --accent-color: var(--mercury);
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.78;
+}
+
+h1 {
+  font-family: "Antonio", sans-serif;
+  font-size: 5rem;
+  line-height: 1.2875;
+}
+
+h2 {
+  font-family: "Antonio", sans-serif;
+  font-size: 2.5rem;
+  line-height: 1.3;
+  letter-spacing: -1.5px;
+}
+
+h3 {
+  font-family: "Spartan", sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  line-height: 2.08;
+  letter-spacing: 2.6px;
+}
+
+h4 {
+  font-family: "Spartan", sans-serif;
+  font-size: 0.6875rem;
+  font-weight: bold;
+  line-height: 2.27;
+  letter-spacing: 1px;
+}
+
+.btn {
+  padding: 0.75rem 1.75rem;
+  text-transform: uppercase;
+  color: var(--white);
+  background-color: var(--black-pearl);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background 300ms ease-in-out, border 300ms ease-in-out;
+}
+.btn:hover {
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.btn--active {
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+}
+.btn span {
+  margin-inline-end: 1.75rem;
+  font-size: 0.75rem;
+  color: var(--white);
+  opacity: 0.5;
+}
+
+body {
+  color: var(--white);
+  background-color: var(--black-pearl);
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,9 @@
+header
+  .container
+    .logo The Planets
+    button.btn.burger Menu
+    nav.nav
+      ul
+        each planetName in planetsNames
+          li
+            a(href="#") #{planetName}
