@@ -1,9 +1,12 @@
 header
   .container
     .logo The Planets
-    button.btn.burger Menu
+    button#menu-btn.menu-btn(aria-label="open navigation")
+      img(src="/assets/images/icons/icon-hamburger.svg", alt="menu")
     nav.nav
-      ul
+      ul.nav__list
         each planetName in planetsNames
-          li
-            a(href="#") #{planetName}
+          li.nav__item
+            a.nav__link(href=`/${planetName.toLowerCase()}`  data-planet=planetName.toLowerCase())
+              =planetName
+              img(src="/assets/images/icons/icon-chevron.svg", alt="")

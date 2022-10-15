@@ -12,16 +12,51 @@
   --uranus: #1ec2a4;
   --neptune: #2d68f0;
   --accent-color: var(--mercury);
+  --header-height: 4.25rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
 }
 
 body {
-  margin: 0;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
 }
 
 img {
   max-width: 100%;
 }
 
+button {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 body {
   font-family: "Spartan", sans-serif;
   font-size: 0.875rem;
@@ -57,6 +92,109 @@ h4 {
   letter-spacing: 1px;
 }
 
+header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--header-height);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+header .logo {
+  font-family: "Antonio", sans-serif;
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  letter-spacing: -1.05px;
+  line-height: 1;
+}
+header .menu-btn {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  transition: opacity 300ms ease-in-out;
+}
+header .menu-btn:hover {
+  cursor: pointer;
+}
+header .menu-btn--active {
+  opacity: 0.25;
+}
+header .nav {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  visibility: hidden;
+  height: 0;
+  padding-inline: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+header .nav--visible {
+  visibility: visible;
+  height: calc(100vh - var(--header-height) - 1px);
+  background-color: var(--black-pearl);
+}
+header .nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+header .nav__link {
+  display: flex;
+  align-items: center;
+  padding-block: 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.67;
+  font-weight: bold;
+  letter-spacing: 1.36px;
+  color: var(--white);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+header .nav__link::before {
+  content: "";
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  margin-inline-end: 1.5rem;
+  border-radius: 100%;
+}
+header .nav__link[data-planet=mercury]::before {
+  background-color: var(--mercury);
+}
+header .nav__link[data-planet=venus]::before {
+  background-color: var(--venus);
+}
+header .nav__link[data-planet=earth]::before {
+  background-color: var(--earth);
+}
+header .nav__link[data-planet=mars]::before {
+  background-color: var(--mars);
+}
+header .nav__link[data-planet=jupiter]::before {
+  background-color: var(--jupiter);
+}
+header .nav__link[data-planet=saturn]::before {
+  background-color: var(--saturn);
+}
+header .nav__link[data-planet=uranus]::before {
+  background-color: var(--uranus);
+}
+header .nav__link[data-planet=neptune]::before {
+  background-color: var(--neptune);
+}
+header .nav__link img {
+  margin-inline-start: auto;
+}
+header .nav__item + .nav__item {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .btn {
   padding: 0.75rem 1.75rem;
   text-transform: uppercase;
@@ -82,7 +220,9 @@ h4 {
 
 body {
   color: var(--white);
-  background-color: var(--black-pearl);
+  background: url("/assets/images/background-stars.svg") var(--black-pearl) repeat;
 }
 
-/*# sourceMappingURL=style.css.map */
+.container {
+  padding-inline: 1.5rem;
+}

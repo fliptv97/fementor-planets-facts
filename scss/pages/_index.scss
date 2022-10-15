@@ -1,4 +1,8 @@
 body {
     color: var(--white);
-    background-color: var(--black-pearl);
+    background: url("/assets/images/background-stars.svg") var(--black-pearl) repeat;
+}
+
+.container {
+    padding-inline: 1.5rem;
 }
